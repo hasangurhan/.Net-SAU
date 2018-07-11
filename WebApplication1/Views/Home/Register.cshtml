@@ -1,0 +1,65 @@
+﻿@using MyEverNote.Entities.ValueObjects
+@model RegisterViewModel
+@{
+    ViewBag.Title = "kayit sayfasi";
+}
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+
+<style type="text/css">
+    .validation-summary-errors{
+        border:2px dotted #ff0000;
+        background-color: #ff6a00;
+        border-radius:8px;
+    }
+    .validation-summary-errors ul {
+        list-style-type:none;
+        padding:10px;
+        color:#ffffff;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <section class="login-info">
+        <div class="container">
+            <div class="row main">
+                <div class="form-header">
+                    <h1 class="text-center "> kayit formu </h1>
+                </div>
+                <div class="main-content">
+                    @Html.ValidationSummary(false)
+                    <div class="input-group ">
+
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                        @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Giris" })
+                       
+                    </div>
+                    <div class="input-group ">
+
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "aEmail" })
+                        <!--<input id="email" type="text" class="form-control" name="email" placeholder="Enter your Email">-->
+                    </div>
+                    <div class="input-group ">
+
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                        @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Giris", type = "password" })
+                        <!--<input id="email" type="text" class="form-control" name="email" placeholder="Enter your Email">-->
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                        @Html.TextBoxFor(model => model.RePassword, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
+                        <!--<input id="password" type="password" class="form-control" name="password" placeholder="Enter your Password">>-->
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-danger btn-lg btn-block login-button">Kayit ol</button>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+    

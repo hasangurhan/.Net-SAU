@@ -1,0 +1,8 @@
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\bin\Debug\MyEverNote.Entities.dll
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\bin\Debug\MyEverNote.Entities.pdb
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\obj\Debug\MyEverNote.Entities.csprojResolveAssemblyReference.cache
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\obj\Debug\MyEverNote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\obj\Debug\MyEverNote.Entities.dll
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\obj\Debug\MyEverNote.Entities.pdb
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\bin\Debug\Evernote.Common.dll
+C:\Users\nyksV\source\repos\WebApplication1\MyEverNote.Entities\bin\Debug\Evernote.Common.pdb

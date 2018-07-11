@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+@using MyEverNote.Entities
+@model List<Note>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Partial("_PartialCategories")
+
+        </div>
+        <div class="col-md-7 col-md-offset-1">
+            <div class="row">
+                <h2>
+                    loremsa
+                </h2>
+                <img src="http://placehold.it/500x200" class="center-block img-responsive img-rounded img-thumbnail" alt="Alternate Text" />
+                <p>
+                    Asadsadasddsadsadsadsadsadsadsadasdasdada
+
+
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@section footer{
+    @Html.Partial("_PartialFooter")
+}

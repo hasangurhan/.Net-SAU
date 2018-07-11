@@ -1,0 +1,6 @@
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\bin\Debug\MyEvenote.Common.dll
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\bin\Debug\MyEvenote.Common.pdb
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\obj\Debug\MyEvenote.Common.csprojResolveAssemblyReference.cache
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\obj\Debug\MyEvenote.Common.csproj.CoreCompileInputs.cache
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\obj\Debug\MyEvenote.Common.dll
+C:\Users\nyksV\source\repos\WebApplication1\MyEvenote.Common\obj\Debug\MyEvenote.Common.pdb

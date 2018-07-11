@@ -1,0 +1,94 @@
+﻿@using MyEverNote.Entities
+@model List<Note>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Partial("_PartialCategories")
+            <link href="~/Content/Slider.css" rel="stylesheet" />
+        </div>
+        <div class="col-md-9">
+            <div class="row carousel-holder">
+                <div class="col-md-12">
+                    <section id="slideshow">
+                        <div class="entire-content">
+                            <div class="content-carrousel">
+                                <figure class="shadow"><a href="/Home/ByCategory/1"><img src="http://www.expo21xx.com/news/wp-content/uploads/e2v-PC8548-microprocessor.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/2"><img src="http://learning.pratikar.com/wp-content/uploads/2015/04/MVC3.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/3"><img src="https://www.iaspaper.net/wp-content/uploads/2017/03/NCERT-Solutions-For-Class-11-Maths.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/4"><img src="http://www.mdaithub.com/assets/images/portfolio/data-structure.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/5"><img src="https://cdn2.iconfinder.com/data/icons/brainy-icons-science/120/0909-formula02-512.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/6"><img src="http://www.freepngimg.com/download/networking/3-2-networking-png.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/7"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/800px-AngularJS_logo.svg.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/8"><img src="http://codehustler.org/wp-content/uploads/2012/12/java_logo.png" /></a></figure>
+                                <figure class="shadow"><a href="/Home/ByCategory/9"><img src="http://www.oguzaltuntas.com/wp-content/uploads/2017/01/cpp.png" /></a></figure>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--nNOTELarId-->
+            <div class="row">
+                @foreach (Note note in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4" data-note-id="@note.Id">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="@note.Title">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#" data-toggle="modal" data-target="#modal_notedetail" data-note-id="@note.Id">
+                                        @note.Title
+                                    </a>
+                                </h4>
+                                <h6 class="text-right">
+                                    <span class="glyphicon glyphicon-user"></span><br />
+                                    @note.ModifiedOn.ToString("dd.MM.yy HH:mm") <span class="glyphicon glyphicon-time"></span>  <!--note.Owner.Id-->
+                                </h6>
+
+                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
+                                {
+                                    <p>@(note.Text.Substring(0, 70) + "...")</p>
+                                    <p class="pull-right">
+                                        <a href="#" data-toggle="modal" data-target="#modal_notedetail" data-note-id="@note.Id" class="btn btn-default btn-sm">devamı <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>@note.Text</p>
+                                }
+
+
+                            </div>
+                            <div><hr /></div>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal_comment" data-note-id="@note.Id">
+                                        <span class="glyphicon glyphicon-comment"> Yorumlar</span>
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button" data-liked="false" data-note-id="@note.Id">
+                                        <span class="glyphicon glyphicon-star-empty like-star"></span>&nbsp;
+                                        <span class="like-count">@note.LikeCount</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@section footer{
+    @Html.Partial("_PartialFooter")
+}
+@Bootstrap.ModalPopup("modal_comment", title: "Yorumlar");
+@Bootstrap.ModalPopup("modal_notedetail", title:"Not Detayı")
+<script src="~/Scripts/comment.js"></script>
+<script src="~/Scripts/like.js"></script>
+<script src="~/Scripts/NoteDetailPopup.js"></script>
